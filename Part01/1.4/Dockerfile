@@ -1,6 +1,10 @@
-FROM ubuntu
+FROM ubuntu:18.04
+
+WORKDIR /usr/src/app
+
+COPY run.sh /usr/src/app/
+
 RUN apt-get update && apt-get -y install curl
-WORKDIR /app
-COPY run.sh /app
-RUN ["chmod", "+x", "/app/run.sh"]
-ENTRYPOINT [ "./run.sh" ]
+RUN chmod +x /usr/src/app/run.sh
+
+CMD [ "./run.sh" ]

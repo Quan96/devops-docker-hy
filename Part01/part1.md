@@ -1,5 +1,18 @@
 ## Part 01
 
+### Exercise 1.3
+Steps:
+
+1. ```docker run -d devopsdockeruh/simple-web-service:ubuntu```
+2. Get the hashed id of container. In this case: ```380970e02030722278f66a6804aa293b3bb7d3467f54791d0c51f7e8731875bd```
+3. ```docker exec -it 380970e02030722278f66a6804aa293b3bb7d3467f54791d0c51f7e8731875bd```
+4. ```tail -f ./text.log```
+
+Output:
+```
+Secret message is: 'You can find the source code here: https://github.com/docker-hy'
+```
+
 ### Exercise 1.4
 
 run.sh:
@@ -41,3 +54,29 @@ Searching..
 <p>The document has moved <a href="https://www.helsinki.fi/">here</a>.</p>
 </body></html>
 ```
+
+### Exercise 1.5
+
+Memory space comparison:
+- Ubuntu version: 83MB
+- Alpine version: 15.7MB
+
+### Exercise 1.6
+
+Steps:
+1. ```docker run -it devopsdockeruh/pull_exercise```
+2. ```Input the secret word: basics```
+3. ```You found the correct password. Secret message is: "This is the secret message"```
+
+### Excercise 1.10
+
+Steps:
+1. ```docker run -d --name simple-web-service -p 8080:8080 devopsdockeruh/simple-web-service server```
+2. Connect to localhost:8080 in the browser
+
+Output:
+
+{
+    message: "You connected to the following path: /",
+    path: "/"
+}
