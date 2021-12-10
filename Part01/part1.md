@@ -80,3 +80,10 @@ Output:
     message: "You connected to the following path: /",
     path: "/"
 }
+
+### Exercise 1.13
+Steps:
+1. ```Navigate working directory to material-application/example-backend```
+2. ```docker build -t ex1.13 -f ../../Part01/1.13/Dockerfile .```
+3. ```Wait for docker to build the docker image```
+4. ```docker run -d --name example-backend-1.13 -p 8080:8080 ex1.13```

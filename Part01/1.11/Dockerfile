@@ -3,7 +3,7 @@ FROM openjdk:11
 WORKDIR /usr/src/app
 EXPOSE 8080
 
-COPY . /usr/src/app/
+COPY . .
 
 RUN ./mvnw package
 
