@@ -87,3 +87,17 @@ Steps:
 2. ```docker build -t ex1.13 -f ../../Part01/1.13/Dockerfile .```
 3. ```Wait for docker to build the docker image```
 4. ```docker run -d --name example-backend-1.13 -p 8080:8080 ex1.13```
+
+### Exercise 1.14
+Steps:
+- Frontend
+1. ```Navigate working directory to material-application/example-frontend```
+2. ```docker build -t front_ex1.14 -f ../../Part01/1.14/frontend/Dockerfile .```
+3. ```Wait for docker to build the docker image```
+4. ```docker run -d --name ex1.14front -p 5000:5000 front_ex1.14```
+
+- Backend
+1. ```Navigate working directory to material-application/example-backend```
+2. ```docker build -t back_ex1.14 -f ../../Part01/1.14/backend/Dockerfile .```
+3. ```Wait for docker to build the docker image```
+4. ```docker run -d --name ex1.14back -p 8080:8080 back_ex1.14```
