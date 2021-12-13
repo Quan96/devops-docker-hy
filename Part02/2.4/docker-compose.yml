@@ -16,12 +16,12 @@ services:
       context: ../../material-applications/example-backend
       dockerfile: ../../Part01/1.14/backend/Dockerfile
     environment:
-      - REDIS_HOST=redisdb2.4
+      - REDIS_HOST=redisdbcache2.4
     container_name: backend2.4
   
-  redisdb2.4:
+  redisdbcache2.4:
     image: redis:6.0
     ports:
       - 6379:6379
-    container_name: redisdb2.4
+    container_name: redisdbcache2.4
     
