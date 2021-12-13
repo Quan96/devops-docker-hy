@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  frontend:
+    ports:
+      - 5000:5000
+    build:
+      context: ../../material-applications/example-frontend
+      dockerfile: ../../Part01/1.14/frontend/Dockerfile
+    container_name: frontend2.4
+  
+  backend:
+    ports:
+      - 8080:8080
+    build:
+      context: ../../material-applications/example-backend
+      dockerfile: ../../Part01/1.14/backend/Dockerfile
+    environment:
+      - REDIS_HOST=redisdb2.4
+    container_name: backend2.4
+  
+  redisdb2.4:
+    image: redis:6.0
+    ports:
+      - 6379:6379
+    container_name: redisdb2.4
+    
