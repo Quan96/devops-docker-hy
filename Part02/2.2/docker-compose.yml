@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  simple-web-service:
+    image: devopsdockeruh/simple-web-service:alpine
+    ports:
+      - 8080:8080
+    build: .
+    volumes:
+      - ./logs/text.log:/usr/src/app/text.log
+    command: ["./usr/src/app/server", "server"]
+    container_name: simple-web-service2.2

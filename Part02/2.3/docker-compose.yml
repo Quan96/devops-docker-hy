@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  frontend:
+    ports:
+      - 5000:5000
+    build:
+      context: ../../material-applications/example-frontend
+      dockerfile: ../Part01/1.14/frontend/Dockerfile
+    container_name: frontend2.3
+  
+  backend:
+    ports:
+      - 8080:8080
+    build:
+      context: ../../material-applications/example-backend
+      dockerfile: ../Part01/1.14/backend/Dockerfile
+    container_name: backend2.3
