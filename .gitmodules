@@ -1,3 +1,12 @@
 [submodule "material-applications"]
 	path = material-applications
 	url = git@github.com:docker-hy/material-applications.git
+[submodule "Part02/2.7/ml-kurkkumopo-frontend"]
+	path = Part02/2.7/ml-kurkkumopo-frontend
+	url = git@github.com:docker-hy/ml-kurkkumopo-frontend.git
+[submodule "Part02/2.7/ml-kurkkumopo-backend"]
+	path = Part02/2.7/ml-kurkkumopo-backend
+	url = git@github.com:docker-hy/ml-kurkkumopo-backend.git
+[submodule "Part02/2.7/ml-kurkkumopo-training"]
+	path = Part02/2.7/ml-kurkkumopo-training
+	url = git@github.com:docker-hy/ml-kurkkumopo-training.git

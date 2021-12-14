@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  frontend:
+    ports:
+      - 5000:5000
+    build:
+      context: ../../material-applications/example-frontend
+      dockerfile: ../../Part01/1.14/frontend/Dockerfile
+    container_name: frontend2.6
+  
+  backend:
+    ports:
+      - 8080:8080
+    build:
+      context: ../../material-applications/example-backend
+      dockerfile: ../../Part01/1.14/backend/Dockerfile
+    environment:
+      - REDIS_HOST=redisdbcache2.6
+      - POSTGRES_HOST=db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DATABASE=postgres
+    container_name: backend2.6
+  
+  redisdbcache2.6:
+    image: redis:6.0
+    ports:
+      - 6379:6379
+    container_name: redisdbcache2.4
+    
+  db:
+    image: postgres:14.1-bullseye
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - 5432:5432
+    container_name: postgresdb2.6
