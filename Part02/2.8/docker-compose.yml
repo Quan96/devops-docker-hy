@@ -7,7 +7,7 @@ services:
     build:
       context: ../../material-applications/example-frontend
       dockerfile: ../../Part01/1.14/frontend/Dockerfile
-    container_name: frontend2.6
+    container_name: frontend2.8
   
   backend:
     ports:
@@ -16,18 +16,18 @@ services:
       context: ../../material-applications/example-backend
       dockerfile: ../../Part01/1.14/backend/Dockerfile
     environment:
-      - REDIS_HOST=redisdbcache2.6
+      - REDIS_HOST=redisdbcache
       - POSTGRES_HOST=db
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
       - POSTGRES_DATABASE=postgres
-    container_name: backend2.6
+    container_name: backend2.8
   
-  redisdbcache2.6:
+  redisdbcache:
     image: redis:6.0
     ports:
       - 6379:6379
-    container_name: redisdbcache2.6
+    container_name: redisdbcache2.8
     
   db:
     image: postgres:14.1-bullseye
@@ -38,4 +38,18 @@ services:
       - POSTGRES_DB=postgres
     ports:
       - 5432:5432
-    container_name: postgresdb2.6
+    container_name: postgresdb2.8
+
+  nginx:
+    ports:
+      - 80:80
+    image: nginx:1.21.4-alpine
+    restart: always
+    depends_on:
+      - frontend
+      - backend
+      - redisdbcache
+      - db
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    container_name: nginx2.8
