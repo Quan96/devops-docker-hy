@@ -7,6 +7,10 @@ services:
     build:
       context: ../../material-applications/example-frontend
       dockerfile: ../../Part01/1.14/frontend/Dockerfile
+    depends_on:
+      - backend
+      - redisdbcache
+      - db
     container_name: frontend2.9
   
   backend:
